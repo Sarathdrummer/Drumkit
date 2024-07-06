@@ -1,0 +1,53 @@
+<html>
+<head><title>register course</title></head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styl1.css">
+<script src="email.js"></script>
+<div class="cl1">
+	<form action="poi.html">
+		<h1>Let's drum</h1>
+		<div class="input-box">
+			<input type="text" placeholder="Username" id="email" required>
+		</div>
+		
+		<div class="input-box">
+			<input type="password" placeholder="Password" id="password" required>
+</div>
+		<div class="forgot">
+			<label><input type="checkbox">Remember me</label>
+		<a href="#">Forgot password</a>
+		</div><div class="btn">
+		<button onclick="return validateAndRedirect()" type="submit" class="btn">Login</button></div>
+		<div class="register">
+			<p>Don't have an account? <a href="#">Register</a></p>
+		</div>
+		<p id="result"></p>
+	</form>
+	<span id="error-message" style="color: red;"></span>
+
+</div>
+<script>
+        function validateAndRedirect() {
+            const emailInput = document.getElementById("email");
+            const errorMessage = document.getElementById("error-message");
+	    const passwordInput = document.getElementById("password");
+            const email = emailInput.value.trim();
+	    const password = passwordInput.value.trim();
+            const isValidE = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email);
+	    const isValidP = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password);
+            if (isValidE && isValidP) {
+                errorMessage.textContent = "";
+                window.location.href = "poi.html";
+                return true;
+            } else {
+                errorMessage.textContent = "Invalid email address or password.";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

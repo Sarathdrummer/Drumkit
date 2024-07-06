@@ -1,0 +1,31 @@
+body{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	min-height:100vh;
+	background:;
+	font-family:"Poppins",sans-serif;
+}
+p{
+font-size:36px;
+}
+a{
+font-size:28px;
+top-margin:2px;
+}
+a:link {
+  color:rgb(81, 130, 155);
+}
+
+a:visited {
+  color:rgb(81, 130, 155);
+}
+
+
+a:hover {
+  color: black;
+}
+
+a:active {
+  color:rgb(81, 130, 155);
+}
